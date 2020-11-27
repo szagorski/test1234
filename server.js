@@ -22,13 +22,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(express.static('static'))
 
-app.get("/", function (req, res) {
+app.get("https://krzysztofsliwinski3id1.herokuapp.com//", function (req, res) {
     res.sendFile(path.join(__dirname + "/static/pages/main.html"))
 
 
 })
 
-app.get("/login", function (req, res) {
+app.get("https://krzysztofsliwinski3id1.herokuapp.com//login", function (req, res) {
     if (logged == false) {
         res.sendFile(path.join(__dirname + "/static/pages/login.html"))
     } else if (logged == true) {
@@ -39,12 +39,12 @@ app.get("/login", function (req, res) {
 
 })
 
-app.get("/register", function (req, res) {
+app.get("https://krzysztofsliwinski3id1.herokuapp.com//register", function (req, res) {
     res.sendFile(path.join(__dirname + "/static/pages/register.html"))
 
 })
 
-app.get("/admin", function (req, res) {
+app.get("https://krzysztofsliwinski3id1.herokuapp.com//admin", function (req, res) {
     if (accountType == "admin") {
         res.sendFile(path.join(__dirname + "/static/pages/adminLogged.html"))
     } else {
@@ -54,7 +54,7 @@ app.get("/admin", function (req, res) {
 
 })
 
-app.get("/sort", function (req, res) {
+app.get("https://krzysztofsliwinski3id1.herokuapp.com//sort", function (req, res) {
     let strona = "<body><a href='/sort'>SORT</a><br><a href='/gender'>GENDER</a><br><a href='/show'>SHOW</a><form onchange='this.submit()' method='GET'><input type='radio' name='sortType' value='malejąco'><label for='malejąco'>malejąco</label><input type='radio' name='sortType' value='rosnąco'><label for='rosnąco'>rosnąco</label></form><table>"
 
     if (req.query.sortType == "malejąco") {
@@ -113,7 +113,7 @@ app.get("/sort", function (req, res) {
 
 })
 
-app.get("/gender", function (req, res) {
+app.get("https://krzysztofsliwinski3id1.herokuapp.com//gender", function (req, res) {
     let strona = "<body><a href='/sort'>SORT</a><br><a href='/gender'>GENDER</a><br><a href='/show'>SHOW</a>"
     males = []
     females = []
@@ -169,7 +169,7 @@ app.get("/gender", function (req, res) {
 
 })
 
-app.get("/show", function (req, res) {
+app.get("https://krzysztofsliwinski3id1.herokuapp.com//show", function (req, res) {
     let strona = "<body><a href='/sort'>SORT</a><br><a href='/gender'>GENDER</a><br><a href='/show'>SHOW</a><h1>Użytkownicy:</h1><table>"
     for (let i = 0; i < users.length; i++) {
         strona += "<tr style='border:1px solid navy;'>"
