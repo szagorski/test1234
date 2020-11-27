@@ -9,7 +9,7 @@ var path = require("path");
 const e = require("express");
 
 var users = [
-    { login: "admin", password: "admin", age: "18", student: "!", gender: "male" }
+    { login: "admin", password: "admin", age: "18", student: "!", gender: "mężczyzna" }
 ]
 
 var logged = false
