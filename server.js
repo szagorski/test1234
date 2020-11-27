@@ -20,6 +20,7 @@ var accountType
 //parser
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(express.static('static'))
 
 app.get("/", function (req, res) {
     res.sendFile(path.join(__dirname + "/static/pages/main.html"))
@@ -298,11 +299,6 @@ app.post("/handleLogOut", function (req, res) {
     accountType = undefined
     res.redirect("/")
 })
-
-
-
-
-app.use(express.static('static'))
 
 
 //nasłuch na określonym porcie
