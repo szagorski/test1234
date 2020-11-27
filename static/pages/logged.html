@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+    <title>Login Page</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">MAIN</a></li>
+                <li class="current"><a href="/login">LOGIN</a></li>
+                <li><a href="/register">REGISTER</a></li>
+                <li><a href="/admin">ADMIN</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <h1 class="slogan">LOGGED</h1>
+
+    <form action="/handleLogOut" method="POST">
+        <button type="submit">LOG OUT</button>
+    </form>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

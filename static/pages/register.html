@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
+    <title>Register Page</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">MAIN</a></li>
+                <li><a href="/login">LOGIN</a></li>
+                <li class="current"><a href="/register">REGISTER</a></li>
+                <li><a href="/admin">ADMIN</a></li>
+            </ul>
+
+        </nav>
+    </header>
+    <h1 class="slogan">register page</h1>
+
+    <form action="/handleRegister" method="POST">
+        <label for="text">login:</label>
+        <input type="text" name="login" id="login" placeholder="Enter login...">
+        <label for="password">hasło:</label>
+        <input type="text" name="password" id="password" placeholder="Enter password...">
+        <label for="age">wiek:</label>
+        <select name="age" id="age">
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+        </select>
+
+        <label for="student">student?</label>
+        <input type="checkbox" name="student" id="student">
+        <label for="gender" id="gender">płeć:</label>
+
+        <input type="radio" name="gender" id="male" value="male">
+        <label for="male">M</label>
+
+        <input type="radio" name="gender" id="female" value="female">
+        <label for="female">K</label>
+        <button type="submit">SUBMIT</button>
+    </form>
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
