@@ -44,9 +44,9 @@ app.get("/register", function (req, res) {
 })
 
 app.get("/admin", function (req, res) {
-    if (accountType == "admin") {
+    if (logged == true) {
         res.sendFile(path.join(__dirname + "/static/pages/adminLogged.html"))
-    } else {
+    } else if (logged == false) {
 
         res.sendFile(path.join(__dirname + "/static/pages/admin.html"))
     }
@@ -103,12 +103,9 @@ app.get("/sort", function (req, res) {
 
 
     strona += "</table></body>"
-    if (accountType == "admin") {
-        res.send(strona)
-    } else {
 
-        res.send("<p>ODMOWA DOSTĘPU!</p>")
-    }
+    res.send(strona)
+
 
 })
 
@@ -158,12 +155,12 @@ app.get("/gender", function (req, res) {
 
     }
     strona += "</table></body>"
-    if (accountType == "admin") {
-        res.send(strona)
-    } else {
 
-        res.send("<p>ODMOWA DOSTĘPU!</p>")
-    }
+    res.send(strona)
+
+
+
+
 
 
 })
@@ -200,12 +197,12 @@ app.get("/show", function (req, res) {
         strona += "</tr>"
     }
     strona += "</table></body>"
-    if (accountType == "admin") {
-        res.send(strona)
-    } else {
 
-        res.send("<p>ODMOWA DOSTĘPU!</p>")
-    }
+    res.send(strona)
+
+
+
+
 
 })
 
@@ -235,16 +232,15 @@ app.post("/handleRegister", function (req, res) {
         users.push(data)
         console.log("User " + data.login + " added!")
         console.log(users)
-        res.redirect("/")
+        res.send("<p>Witaj," + data.login + "</p>")
 
     } else if (!canPush) {
         if (data.login.length < 1) {
             console.log("Login too short!")
-
-            res.redirect("/register")
+            res.send("<p>Login zbyt krótki!</p>")
         } else {
             console.log("User " + data.login + " already exists!")
-            res.redirect("/register")
+            res.send("<p>Taki użytkownik już istnieje!</p>")
         }
 
     }
@@ -280,14 +276,14 @@ app.post("/handleLogin", function (req, res) {
         console.log("Account type: " + accountType)
         console.log(users)
 
-        res.redirect("/")
+        res.send("<p>Zalogowano na użytkownika: " + data.login + "</p>")
 
 
     } else if (!canLogIn) {
 
         console.log("Wrong login or password!")
 
-        res.redirect("/login")
+        res.send("<p>Zły login lub hasło!</p>")
     }
 
 
