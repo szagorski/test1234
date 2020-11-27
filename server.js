@@ -114,9 +114,9 @@ app.get("/gender", function (req, res) {
     males = []
     females = []
     for (let i = 0; i < users.length; i++) {
-        if (users[i].gender == "male") {
+        if (users[i].gender == "mężczyzna") {
             males.push(users[i].login)
-        } else if (users[i].gender == "female") {
+        } else if (users[i].gender == "kobieta") {
             females.push(users[i].login)
         }
     }
