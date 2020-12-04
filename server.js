@@ -111,7 +111,7 @@ app.get("/sort", function (req, res) {
 
     }
 
-    if(logged == false){
+    else if(logged == false){
         res.send("Nie jesteś zalogowany")
     }
 })
@@ -169,7 +169,7 @@ app.get("/gender", function (req, res) {
 
 
     }
-    if(logged == false){
+    else if(logged == false){
         res.send("Nie jesteś zalogowany")
     }
 
@@ -214,7 +214,7 @@ app.get("/show", function (req, res) {
 
 
     }
-    if(logged == false){
+    else if(logged == false){
         res.send("Nie jesteś zalogowany")
     }
 })
