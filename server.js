@@ -54,7 +54,7 @@ app.get("/admin", function (req, res) {
 })
 
 app.get("/sort", function (req, res) {
-    if(logged == True){
+    if(logged == true){
 
     let strona = "<body><a href='/sort'>SORT</a><br><a href='/gender'>GENDER</a><br><a href='/show'>SHOW</a><form onchange='this.submit()' method='GET'><input type='radio' name='sortType' value='malejąco'><label for='malejąco'>malejąco</label><input type='radio' name='sortType' value='rosnąco'><label for='rosnąco'>rosnąco</label></form><table>"
 
@@ -101,7 +101,7 @@ app.get("/sort", function (req, res) {
             }
             strona += "</tr>"
         }
-        if(logged == False){
+        if(logged == false){
             res.send("Nie jesteś zalogowany")
         }
     }
@@ -115,7 +115,7 @@ app.get("/sort", function (req, res) {
 })
 
 app.get("/gender", function (req, res) {
-    if(logged == True){
+    if(logged == true){
     let strona = "<body><a href='/sort'>SORT</a><br><a href='/gender'>GENDER</a><br><a href='/show'>SHOW</a>"
     males = []
     females = []
@@ -167,14 +167,14 @@ app.get("/gender", function (req, res) {
 
 
     }
-    if(logged == False){
+    if(logged == false){
         res.send("Nie jesteś zalogowany")
     }
 
 })
 
 app.get("/show", function (req, res) {
-    if(logged == True){
+    if(logged == true){
     let strona = "<body><a href='/sort'>SORT</a><br><a href='/gender'>GENDER</a><br><a href='/show'>SHOW</a><h1>Użytkownicy:</h1><table>"
     for (let i = 0; i < users.length; i++) {
         strona += "<tr style='border:1px solid navy;'>"
@@ -212,7 +212,7 @@ app.get("/show", function (req, res) {
 
 
     }
-    if(logged == False){
+    if(logged == false){
         res.send("Nie jesteś zalogowany")
     }
 })
