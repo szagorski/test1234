@@ -101,9 +101,7 @@ app.get("/sort", function (req, res) {
             }
             strona += "</tr>"
         }
-        if(logged == false){
-            res.send("Nie jesteś zalogowany")
-        }
+
     }
 
 
@@ -111,6 +109,10 @@ app.get("/sort", function (req, res) {
 
     res.send(strona)
 
+    }
+
+    if(logged == false){
+        res.send("Nie jesteś zalogowany")
     }
 })
 
